@@ -1,26 +1,22 @@
-function Tweet() {
+import Timestamp from "./Timestamp";
+import Message from "./Message";
+import User from "./User";
+import Image from "./Image";
+
+
+function Tweet({ user, timestamp, message }) {
   return (
     <div className="tweet">
-      <img
-        src="https://i.imgur.com/9yw1Fyw.jpg"
-        className="profile"
-        alt="profile"
-      />
+      <Image image={user.image}></Image>
 
       <div className="body">
         <div className="top">
-          <span className="user">
-            <span className="name">Ironhack</span>
-            <span className="handle">@ironhack</span>
-          </span>
+          <User user={user}></User>
 
-          <span className="timestamp">Nov 30, 2020</span>
+          <Timestamp timestamp={timestamp} />
         </div>
 
-        <p className="message">
-          On December 7th, we will be hosting a #webinar that will introduce you
-          to #SQL! Are you ready? 🚀
-        </p>
+        <Message message={message}></Message>
 
         <div className="actions">
           {/* Font Awesome icons */}
